@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="PZW_dr_4.View.PostView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:view="clr-namespace:PZW_dr_4.View"
+        xmlns:viewModel="clr-namespace:PZW_dr_4.ViewModel"
+        mc:Ignorable="d"
+        Height="70" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" Grid.RowSpan="2" Fill="Lavender"></Rectangle>
+        <Image Source="{Binding Path=Post.User.FilePath}" Grid.Row="0" Grid.Column="0" Width="60" Height="60" Margin="0 5" Grid.RowSpan="2"></Image>
+            <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" FontWeight="Bold" Text="{Binding Path=Post.User.Name}"></TextBlock>
+            <TextBlock HorizontalAlignment="Right" Grid.Row="0" Grid.Column="2" Margin="3 0" Text="{Binding Path=Post.Time}"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" TextWrapping="Wrap" HorizontalAlignment="Left" Text="{Binding Path=Post.Text}"></TextBlock>
+        <Button Background="Transparent" BorderBrush="Transparent" Margin="1" Command="{Binding Path=EditCommand}" Height="18" Grid.Column="3" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Top">
+                <Image Source="/Resources/Images/edit.png"></Image>
+        </Button>
+        <Button Background="Transparent" BorderBrush="Transparent" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBox}}, Path=DataContext.DeleteCommand}" CommandParameter="{Binding}" Height="20" Grid.Column="4" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Top">
+            <Image Source="/Resources/Images/delete.png"></Image>
+        </Button>
+    </Grid>
+    </UserControl>

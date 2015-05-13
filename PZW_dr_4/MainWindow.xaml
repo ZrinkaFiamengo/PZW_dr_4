@@ -1,0 +1,29 @@
+﻿<Window x:Class="PZW_dr_4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:view="clr-namespace:PZW_dr_4.View"
+        Title="ChatSite" Height="500" Width="600">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
+            <Button Padding="10" Margin="5" Width="70">Dodaj L</Button>
+            <Button Padding="10" Margin="5" Width="70">Dodaj D</Button>
+        </StackPanel>
+
+        <DockPanel LastChildFill="True" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+            <view:UserCollectionView DockPanel.Dock="Left" VerticalAlignment="Stretch"></view:UserCollectionView>
+            <view:PostCollectionView></view:PostCollectionView>
+        </DockPanel>
+    </Grid>
+    
+</Window>
