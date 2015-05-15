@@ -9,7 +9,6 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="140"></RowDefinition>
-                <RowDefinition Height="30"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
@@ -21,9 +20,7 @@
                     </ItemsControl.ItemTemplate>
              </ListBox>
 
-            <Button Grid.Row="1" Command="{Binding Path=AddCommand}" Grid.Column="0" Width="70" Height="30">Dodaj L</Button>
-
-            <ScrollViewer VerticalScrollBarVisibility="Auto" DockPanel.Dock="Top" VerticalAlignment="Top" Grid.Row="2" Grid.Column="0" Margin="10">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" DockPanel.Dock="Top" VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Margin="10">
                 <ListBox ItemsSource="{Binding UserViewModels}" Width="90">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate DataType="{x:Type viewModel:UserViewModel}">

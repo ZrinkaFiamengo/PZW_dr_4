@@ -16,13 +16,13 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
-            <Button Padding="10" Margin="5" Width="70">Dodaj L</Button>
-            <Button Padding="10" Margin="5" Width="70">Dodaj D</Button>
+            <Button Command="{Binding ElementName=UserCollection, Path=DataContext.AddCommand}"  Padding="10" Margin="5" Width="70">Dodaj L</Button>
+            <Button Command="{Binding ElementName=PostCollection, Path=DataContext.AddCommand}" Padding="10" Margin="5" Width="70">Dodaj D</Button>
         </StackPanel>
 
         <DockPanel LastChildFill="True" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
-            <view:UserCollectionView DockPanel.Dock="Left" VerticalAlignment="Stretch"></view:UserCollectionView>
-            <view:PostCollectionView></view:PostCollectionView>
+            <view:UserCollectionView DockPanel.Dock="Left" VerticalAlignment="Stretch" x:Name="UserCollection"></view:UserCollectionView>
+            <view:PostCollectionView x:Name="PostCollection"></view:PostCollectionView>
         </DockPanel>
     </Grid>
     

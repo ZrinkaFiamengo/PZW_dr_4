@@ -6,14 +6,6 @@
         xmlns:view="clr-namespace:PZW_dr_4.View"
         xmlns:viewModel="clr-namespace:PZW_dr_4.ViewModel"
         mc:Ignorable="d" Width="400">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
-
-        <Button Command="{Binding Path=AddCommand}" Grid.Column="0" Grid.Row="0" Width="70" Height="30">Dodaj D</Button>
-
         <ScrollViewer VerticalScrollBarVisibility="Auto" DockPanel.Dock="Top" VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Margin="10">
             <ListBox ItemsSource="{Binding PostViewModels}" Width="310">
                 <ItemsControl.ItemTemplate>
@@ -23,6 +15,4 @@
                 </ItemsControl.ItemTemplate>
             </ListBox>
         </ScrollViewer>
-        
-    </Grid>
 </UserControl>
